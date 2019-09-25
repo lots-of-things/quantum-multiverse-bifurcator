@@ -2,10 +2,24 @@
 
 {% block body %}
 
-    <h1>Bootstrap starter template by {{ app_data['author'] }} </h1>
-    <h2>{{ app_data['html_title'] }}</h2>
+   {% if msg %}
+   		<h4>The Quantum Multiverse has randomly assigned you to exist in the universe where you will...</h4>
+   		<h2 class="lead">{{ msg[0] }}</h2>
+   		<p>But rest assured, in another universe out there, another version of you will {{msg[1]}}. </p>
+   {% endif %}
 
 
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+   <h4>Fill in these two boxes with the two things you are trying to decide to do.  Push the submit button to let a quantum coputer randomly choose which one you will do.  This will create multiple parallel dimensions where you are doing both things you are trying to decide on.</h4>
+
+    <form action = "/" method = "POST">
+    	<div class="input-group">
+		    <input type="text" name="thingA" class="form-control" placeholder="Thing You Want to Do"/>
+		    <span class="input-group-addon">-</span>
+		    <input type="text" name="thingB" class="form-control" placeholder="Other Thing you Want to Do"/>
+		</div>
+		<input type = "submit" value = "submit" />
+      </form>
+    
+    
    
 {% endblock %}
