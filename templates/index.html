@@ -1,12 +1,27 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-
+    <div class="loader" id="style" style="display:none">Loading...</div>
+    <div class='container' id='substance'>
    {% if msg %}
+       <script>
+        $('#substance').hide();
+      </script>
+      
    		<p>The Quantum Multiverse has randomly assigned you to exist in the universe where you will...</p>
    		<h1 style="text-align:center">{{ msg[0] }}</h1>
    		<p>But rest assured, in another universe out there, another version of you will {{msg[1]}}. <a class="nav-link" href="/explain"> Learn more about WTF I'm talking about. </a></p>
       <h5>Want to go again?...</h5>
+      <script>
+        $(document).ready(function(){
+           $('#substance').hide();
+           $('#style').show();
+           setTimeout(function(){
+                $('#style').hide(0);
+                $('#substance').show(0);
+            }, 2000);
+        });
+      </script>
   {% else %}
 
     <h4>How to use the Quantum Multiverse Bifurcator</h4>
@@ -17,8 +32,7 @@
 
    {% endif %}
 
-   
-
+  
     <form action = "/" method = "POST">
     	<div class="input-group">
 		    <input type="text" name="thingA" class="form-control" placeholder="Option L" style="border:3px solid #b7410e;text-align:center;width:40%;"/>
@@ -32,7 +46,7 @@
     <input type = "submit" value = "bifurcate the multiverse" style="height:4em;width:50%"/>
   </div>
       </form>
-    
-    
+    </div>
+      
    
 {% endblock %}
