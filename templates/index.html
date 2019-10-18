@@ -7,18 +7,30 @@
    		<h2 class="lead">{{ msg[0] }}</h2>
    		<p>But rest assured, in another universe out there, another version of you will {{msg[1]}}. <a class="nav-link" href="/explain"> Learn more about WTF I'm talking about. </a></p>
       <h5>Want to go again?...</h5>
+  {% else %}
+
+    <h4>How to use the Quantum Multiverse Bifurcator</h4>
+   <p> You are trying to decide between two things, but it's difficult to choose. 
+   <p> 1. Enter each of your options into the boxes below.</p>
+   <p> 2. Push 'submit' to let a quantum computer randomly choose which one you will do in this universe while simultaneously creating a parallel universe where the other version of you does the other thing. </p>
+   <p> You have now entered the multiverse. Welcome.</p>
+
    {% endif %}
 
-   <h4>How to use the Quantum Multiverse Bifurcator</h4>
-   <p>Fill in these two boxes with the two options you are trying to decide on.  Push the submit button to let a quantum computer randomly choose which one you will do.  This will create multiple parallel universes so a version of you gets to do both things.</p>
+   
 
     <form action = "/" method = "POST">
     	<div class="input-group">
-		    <input type="text" name="thingA" class="form-control" placeholder="Option L"/>
-		    <span class="input-group-addon">-</span>
-		    <input type="text" name="thingB" class="form-control" placeholder="Option R"/>
+		    <input type="text" name="thingA" class="form-control" placeholder="Option L" style="border:3px solid #b7410e;text-align:center;width:40%;"/>
+        <div  style="width:20%;"></div>
+<!-- 		    <span class="input-group-addon" style="color:white">-----------------------------</span>
+ -->		    <input type="text" name="thingB" class="form-control" placeholder="Option R" style="border:3px solid #035096;text-align:center;width:40%;"/>
 		</div>
-		<input type = "submit" value = "submit" />
+    <p></p>
+    <div class="input-group">
+    <div  style="width:25%;"></div>
+    <input type = "submit" value = "bifurcate the multiverse" style="height:4em;width:50%"/>
+  </div>
       </form>
     
     
