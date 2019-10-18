@@ -1,5 +1,5 @@
-# basic-flask-template
-A barebone Flask app using Flask and Bootstrap.
+# quantum-multiverse-bifurcator
+Simple flask app to pull quantum coin flips from https://qrng.anu.edu.au and convert them to major life decisions.  Enjoy :)
 
 ## Running Locally
 
@@ -7,7 +7,7 @@ Make sure you have Python installed
 
 ```sh
 $ git clone https://github.com/petersimeth/basic-flask-template.git # or clone your own fork
-$ cd basic-flask-template
+$ cd quantum-multiverse-bifurcator
 $ pip install -r requirements.txt
 $ python app.py
 ```

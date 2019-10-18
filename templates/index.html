@@ -3,19 +3,20 @@
 {% block body %}
 
    {% if msg %}
-   		<h4>The Quantum Multiverse has randomly assigned you to exist in the universe where you will...</h4>
+   		<p>The Quantum Multiverse has randomly assigned you to exist in the universe where you will...</p>
    		<h2 class="lead">{{ msg[0] }}</h2>
-   		<p>But rest assured, in another universe out there, another version of you will {{msg[1]}}. </p>
+   		<p>But rest assured, in another universe out there, another version of you will {{msg[1]}}. <a class="nav-link" href="/explain"> Learn more about WTF I'm talking about. </a></p>
+      <h5>Want to go again?...</h5>
    {% endif %}
 
-
-   <h4>Fill in these two boxes with the two things you are trying to decide to do.  Push the submit button to let a quantum coputer randomly choose which one you will do.  This will create multiple parallel dimensions where you are doing both things you are trying to decide on.</h4>
+   <h4>How to use the Quantum Multiverse Bifurcator</h4>
+   <p>Fill in these two boxes with the two options you are trying to decide on.  Push the submit button to let a quantum computer randomly choose which one you will do.  This will create multiple parallel universes so a version of you gets to do both things.</p>
 
     <form action = "/" method = "POST">
     	<div class="input-group">
-		    <input type="text" name="thingA" class="form-control" placeholder="Thing You Want to Do"/>
+		    <input type="text" name="thingA" class="form-control" placeholder="Option L"/>
 		    <span class="input-group-addon">-</span>
-		    <input type="text" name="thingB" class="form-control" placeholder="Other Thing you Want to Do"/>
+		    <input type="text" name="thingB" class="form-control" placeholder="Option R"/>
 		</div>
 		<input type = "submit" value = "submit" />
       </form>
