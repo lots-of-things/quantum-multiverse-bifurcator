@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+#
+#
 
 from flask import Flask, render_template, request
 import urllib.request
@@ -18,9 +20,16 @@ app_data = {
 @app.route('/',methods = ['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        page = urllib.request.urlopen('http://150.203.48.55/RawBin.php', timeout=5)
-        data = page.read().decode('utf-8')
-        bit = data.split('"rng"')[1].split('<td>\n')[1].split('</td>')[0][0]
+        try:
+            page = urllib.request.urlopen('http://150.203.48.55/RawBin.php', timeout=5)
+            data = page.read().decode('utf-8')
+            bit = data.split('"rng"')[1].split('<td>\n')[1].split('</td>')[0][0]
+        except:
+            with open('random_unseen.txt', 'r') as file:
+                data = file.read()
+            bit = data[0]
+            with open('random_unseen.txt', 'w') as file:
+                file.write(data[1:])
 
         result = request.form
         msg = []
@@ -38,6 +47,13 @@ def index():
 def explain():
     return render_template('explain.html', app_data=app_data)
 
+def _write_random_to_file(iterations=10):
+    data = ''
+    for i in range(iterations):
+        page = urllib.request.urlopen('http://150.203.48.55/RawBin.php', timeout=5)
+        data = data+page.read().decode('utf-8').split('"rng"')[1].split('<td>\n')[1].split('</td>')[0]
+    with open('random_unseen.txt', 'w') as file:
+        file.write(data)
 
 # ------- DEVELOPMENT CONFIG -------
 if __name__ == '__main__':
