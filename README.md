@@ -6,7 +6,7 @@ Simple flask app to pull quantum coin flips from https://qrng.anu.edu.au and con
 Make sure you have Python installed
 
 ```sh
-$ git clone https://github.com/petersimeth/basic-flask-template.git # or clone your own fork
+$ git clone https://github.com/lots-of-things/quantum-multiverse-bifurcator.git # or clone your own fork
 $ cd quantum-multiverse-bifurcator
 $ pip install -r requirements.txt
 $ python app.py
